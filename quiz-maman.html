@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quel chocolat pour ta maman ?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf6f0;
+      color: #333;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #a0522d;
+    }
+    .question {
+      margin-bottom: 30px;
+    }
+    .answers button {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #fff8f0;
+      border: 2px solid #d4a373;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s;
+    }
+    .answers button:hover {
+      background-color: #ffeacc;
+    }
+    #result {
+      display: none;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      border: 2px solid #d4a373;
+    }
+    #start-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #d4a373;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Quel chocolat pour ta maman ? 🍫</h1>
+  <p style="text-align:center;">Réponds à ces quelques questions et découvre quel chocolat représente le mieux ta maman !</p>
+  <button id="start-btn">Commencer le quiz</button>
+  <div id="quiz" class="hidden"></div>
+  <div id="result"></div>
+
+  <script>
+    const questions = [
+      {
+        text: "Que fait ta mère quand tu es malade ?",
+        options: ['A. Elle te prépare une soupe maison', 'B. Elle te fait rire', 'C. Elle t’amène tes snacks préférés', 'D. Elle te donne un traitement toutes les 4 heures']
+      },
+      {
+        text: "Le dimanche matin, elle préfère…",
+        options: ['A. Vous câliner', 'B. Danser dans le salon', 'C. Bruncher', 'D. Planifier la semaine']
+      },
+      {
+        text: "À l’école, tu avais oublié ton goûter. Que fait-elle ?",
+        options: ['A. Petit mot doux', 'B. Elle rigole', 'C. Goûter XXL', 'D. Rappel dans le planning']
+      },
+      {
+        text: "Sa réaction quand tu lui annonces une bonne nouvelle :",
+        options: ['A. Les larmes aux yeux', 'B. Elle hurle de joie', 'C. Elle sort les bonbons', 'D. Elle sort son téléphone']
+      },
+      {
+        text: "Son sac à main contient toujours…",
+        options: ['A. Pansements et mouchoirs', 'B. Un sifflet', 'C. Des gâteaux', 'D. Un agenda']
+      },
+      {
+        text: "En vacances, elle est plutôt du genre à…",
+        options: ['A. Endroit calme', 'B. Chasse au trésor', 'C. Dégustation', 'D. Planning complet']
+      }
+    ];
+
+    const results = {
+      A: "💖 Maman attentionnée : Toujours là pour t’écouter, te consoler et prendre soin de toi. Une vraie protectrice pleine de douceur.",
+      B: "😂 Maman drôle : Elle adore faire rire tout le monde. L’ambiance est toujours légère avec elle, c’est la reine de la bonne humeur.",
+      C: "🍰 Maman gourmande : Elle aime partager de bons petits plats, découvrir de nouvelles saveurs et surtout cuisiner avec amour.",
+      D: "📅 Maman organisée : Elle gère tout d’une main de maître. Rien ne lui échappe et elle tient la maison comme une cheffe d’entreprise."
+    };
+
+    const quizContainer = document.getElementById('quiz');
+    const resultContainer = document.getElementById('result');
+    const startBtn = document.getElementById('start-btn');
+
+    let currentQuestion = 0;
+    let answers = [];
+
+    startBtn.addEventListener('click', () => {
+      startBtn.classList.add('hidden');
+      quizContainer.classList.remove('hidden');
+      showQuestion();
+    });
+
+    function showQuestion() {
+      if (currentQuestion >= questions.length) {
+        showResult();
+        return;
+      }
+      const q = questions[currentQuestion];
+      quizContainer.innerHTML = `<div class="question"><h2>${q.text}</h2><div class="answers"></div></div>`;
+      const answerDiv = quizContainer.querySelector('.answers');
+
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.textContent = opt;
+        btn.onclick = () => {
+          answers.push(['A','B','C','D'][i]);
+          currentQuestion++;
+          showQuestion();
+        };
+        answerDiv.appendChild(btn);
+      });
+    }
+
+    function showResult() {
+      quizContainer.classList.add('hidden');
+      resultContainer.style.display = 'block';
+      const count = {A:0, B:0, C:0, D:0};
+      answers.forEach(a => count[a]++);
+      const majority = Object.keys(count).reduce((a,b) => count[a] > count[b] ? a : b);
+      resultContainer.innerHTML = `<h2>Résultat</h2><p>${results[majority]}</p>`;
+    }
+  </script>
+</body>
+</html>
