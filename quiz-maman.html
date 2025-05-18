@@ -7,34 +7,19 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fdf6f0;
-      /* Fond répétitif discret chocolaté */
-      background-image: url('https://www.transparenttextures.com/patterns/brick-wall.png');
-      background-repeat: repeat;
-      background-attachment: fixed;
+      background: #fdf6f0;
       color: #333;
       padding: 20px;
-      margin: 0;
-    }
-
-    .container {
       max-width: 700px;
       margin: auto;
-      background-color: rgba(255, 255, 255, 0.92); /* fond blanc semi-transparent */
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-
     h1, h2 {
       text-align: center;
       color: #a0522d;
     }
-
     .question {
       margin-bottom: 30px;
     }
-
     .answers button {
       display: block;
       margin: 10px 0;
@@ -46,11 +31,9 @@
       width: 100%;
       transition: 0.3s;
     }
-
     .answers button:hover {
       background-color: #ffeacc;
     }
-
     #result {
       display: none;
       background: #fff;
@@ -59,7 +42,6 @@
       margin-top: 30px;
       border: 2px solid #d4a373;
     }
-
     #start-btn {
       display: block;
       margin: 20px auto;
@@ -71,37 +53,15 @@
       border-radius: 12px;
       cursor: pointer;
     }
-
     .hidden { display: none; }
-
-    footer {
-      text-align: center;
-      margin: 40px auto 20px;
-    }
-
-    footer img {
-      max-width: 200px;
-    }
-
-    footer p {
-      font-size: 14px;
-      color: #555;
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Quel chocolat pour ta maman ? 🍫</h1>
-    <p style="text-align:center;">Réponds à ces quelques questions et découvre quel chocolat représente le mieux ta maman !</p>
-    <button id="start-btn">Commencer le quiz</button>
-    <div id="quiz" class="hidden"></div>
-    <div id="result"></div>
-  </div>
-
-  <footer>
-    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot">
-    <p>Avec amour et chocolat 🍫</p>
-  </footer>
+  <h1>Quel chocolat pour ta maman ? 🍫</h1>
+  <p style="text-align:center;">Réponds à ces quelques questions et découvre quel chocolat représente le mieux ta maman !</p>
+  <button id="start-btn">Commencer le quiz</button>
+  <div id="quiz" class="hidden"></div>
+  <div id="result"></div>
 
   <script>
     const questions = [
@@ -152,7 +112,7 @@
       },
       {
         text: "En vacances, elle est plutôt du genre…",
-        "options": [
+        options: [
           "A. Endroit calme",
           "B. Chasse au trésor",
           "C. Dégustation des traditions",
@@ -211,220 +171,11 @@
       resultContainer.innerHTML = `<h2>Résultat</h2><p>${results[majority]}</p>`;
     }
   </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quel chocolat pour ta maman ?</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdf6f0;
-      /* Fond répétitif discret chocolaté */
-      background-image: url('https://www.transparenttextures.com/patterns/brick-wall.png');
-      background-repeat: repeat;
-      background-attachment: fixed;
-      color: #333;
-      padding: 20px;
-      margin: 0;
-    }
 
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background-color: rgba(255, 255, 255, 0.92); /* fond blanc semi-transparent */
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #a0522d;
-    }
-
-    .question {
-      margin-bottom: 30px;
-    }
-
-    .answers button {
-      display: block;
-      margin: 10px 0;
-      padding: 10px;
-      background-color: #fff8f0;
-      border: 2px solid #d4a373;
-      border-radius: 12px;
-      cursor: pointer;
-      width: 100%;
-      transition: 0.3s;
-    }
-
-    .answers button:hover {
-      background-color: #ffeacc;
-    }
-
-    #result {
-      display: none;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 30px;
-      border: 2px solid #d4a373;
-    }
-
-    #start-btn {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #d4a373;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-
-    .hidden { display: none; }
-
-    footer {
-      text-align: center;
-      margin: 40px auto 20px;
-    }
-
-    footer img {
-      max-width: 200px;
-    }
-
-    footer p {
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Quel chocolat pour ta maman ? 🍫</h1>
-    <p style="text-align:center;">Réponds à ces quelques questions et découvre quel chocolat représente le mieux ta maman !</p>
-    <button id="start-btn">Commencer le quiz</button>
-    <div id="quiz" class="hidden"></div>
-    <div id="result"></div>
-  </div>
-
-  <footer>
-    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot">
-    <p>Avec amour et chocolat 🍫</p>
+  <footer style="text-align: center; margin-top: 40px;">
+    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot" width="200">
+    <p style="font-size: 14px; color: #555;">Avec amour et chocolat 🍫</p>
   </footer>
 
-  <script>
-    const questions = [
-      {
-        text: "Que fait ta mère quand tu es malade ?",
-        options: [
-          "A. Elle te fait un câlin",
-          "B. Elle te fait rire",
-          "C. Elle t’amène tes snacks préférés",
-          "D. Elle te donne un traitement toutes les 4 heures"
-        ]
-      },
-      {
-        text: "Le dimanche matin, elle préfère…",
-        options: [
-          "A. Jouer avec vous",
-          "B. Danser dans le salon",
-          "C. Bruncher",
-          "D. Planifier la semaine"
-        ]
-      },
-      {
-        text: "À l’école, tu avais oublié ton goûter. Que faisait-elle le lendemain ?",
-        options: [
-          "A. Mot doux sur le cartable pour éviter de l'oublier",
-          "B. Elle te taquinait sur ton oubli",
-          "C. Elle te préparait un goûter XXL",
-          "D. Elle mettait un rappel dans le planning"
-        ]
-      },
-      {
-        text: "Quand ta maman te dit : \"On part dans 5 minutes\", ça veut dire...",
-        options: [
-          "A. Elle va s'assurer que tu as tout ce qu'il te faut avant de partir",
-          "B. 30 minutes minimum, mais elle va toujours dire \"on part bientôt\"",
-          "C. Elle a déjà préparé un petit snack pour la route",
-          "D. 5 minutes, et on y va tout de suite."
-        ]
-      },
-      {
-        text: "Son sac à main contient toujours…",
-        options: [
-          "A. Pansements et mouchoirs",
-          "B. Un ticket de caisse de 2019",
-          "C. Des gâteaux",
-          "D. Un agenda"
-        ]
-      },
-      {
-        text: "En vacances, elle est plutôt du genre…",
-        "options": [
-          "A. Endroit calme",
-          "B. Chasse au trésor",
-          "C. Dégustation des traditions",
-          "D. Emploi du temps des sorties"
-        ]
-      }
-    ];
-
-    const results = {
-      A: "💖 Maman attentionnée : Toujours là pour t’écouter, te consoler et prendre soin de toi. Une vraie protectrice pleine de douceur.",
-      B: "😂 Maman drôle : Elle adore faire rire tout le monde. L’ambiance est toujours légère avec elle, c’est la reine de la bonne humeur.",
-      C: "🍰 Maman gourmande : Elle aime partager de bons petits plats, découvrir de nouvelles saveurs et surtout cuisiner avec amour.",
-      D: "📅 Maman organisée : Elle gère tout d’une main de maître. Rien ne lui échappe et elle tient la maison comme une cheffe d’entreprise."
-    };
-
-    const quizContainer = document.getElementById('quiz');
-    const resultContainer = document.getElementById('result');
-    const startBtn = document.getElementById('start-btn');
-
-    let currentQuestion = 0;
-    let answers = [];
-
-    startBtn.addEventListener('click', () => {
-      startBtn.classList.add('hidden');
-      quizContainer.classList.remove('hidden');
-      showQuestion();
-    });
-
-    function showQuestion() {
-      if (currentQuestion >= questions.length) {
-        showResult();
-        return;
-      }
-      const q = questions[currentQuestion];
-      quizContainer.innerHTML = `<div class="question"><h2>${q.text}</h2><div class="answers"></div></div>`;
-      const answerDiv = quizContainer.querySelector('.answers');
-
-      q.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        btn.onclick = () => {
-          answers.push(['A','B','C','D'][i]);
-          currentQuestion++;
-          showQuestion();
-        };
-        answerDiv.appendChild(btn);
-      });
-    }
-
-    function showResult() {
-      quizContainer.classList.add('hidden');
-      resultContainer.style.display = 'block';
-      const count = {A:0, B:0, C:0, D:0};
-      answers.forEach(a => count[a]++);
-      const majority = Object.keys(count).reduce((a,b) => count[a] > count[b] ? a : b);
-      resultContainer.innerHTML = `<h2>Résultat</h2><p>${results[majority]}</p>`;
-    }
-  </script>
 </body>
 </html>
