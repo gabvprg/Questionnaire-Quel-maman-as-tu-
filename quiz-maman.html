@@ -54,6 +54,17 @@
       cursor: pointer;
     }
     .hidden { display: none; }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer img {
+      width: 200px;
+    }
+    footer p {
+      font-size: 14px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -62,6 +73,11 @@
   <button id="start-btn">Commencer le quiz</button>
   <div id="quiz" class="hidden"></div>
   <div id="result"></div>
+
+  <footer>
+    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot">
+    <p>Avec amour et chocolat 🍫</p>
+  </footer>
 
   <script>
     const questions = [
@@ -171,11 +187,6 @@
       resultContainer.innerHTML = `<h2>Résultat</h2><p>${results[majority]}</p>`;
     }
   </script>
-
-  <footer style="text-align: center; margin-top: 40px;">
-    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot" width="200">
-    <p style="font-size: 14px; color: #555;">Avec amour et chocolat 🍫</p>
-  </footer>
-
 </body>
 </html>
+
