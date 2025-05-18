@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quel chocolat pour ta maman ?</title>
-<footer style="text-align: center; margin-top: 40px;">
-  <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot" width="200">
-  <p style="font-size: 14px; color: #555;">Avec amour et chocolat 🍫</p>
-</footer>
+  <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #fdf6f0;
@@ -67,63 +64,62 @@
   <div id="result"></div>
 
   <script>
-   const questions = [
-  {
-    text: "Que fait ta mère quand tu es malade ?",
-    options: [
-      "A. Elle te fait un câlin",
-      "B. Elle te fait rire",
-      "C. Elle t’amène tes snacks préférés",
-      "D. Elle te donne un traitement toutes les 4 heures"
-    ]
-  },
-  {
-    text: "Le dimanche matin, elle préfère…",
-    options: [
-      "A. Jouer avec vous",
-      "B. Danser dans le salon",
-      "C. Bruncher",
-      "D. Planifier la semaine"
-    ]
-  },
-  {
-    text: "À l’école, tu avais oublié ton goûter. Que faisait-elle le lendemain ?",
-    options: [
-      "A. Mot doux sur le cartable pour éviter de l'oublier",
-      "B. Elle te taquinait sur ton oubli",
-      "C. Elle te préparait un goûter XXL",
-      "D. Elle mettait un rappel dans le planning"
-    ]
-  },
-  {
-    text: "Quand ta maman te dit : \"On part dans 5 minutes\", ça veut dire...",
-    options: [
-      "A. Elle va s'assurer que tu as tout ce qu'il te faut avant de partir",
-      "B. 30 minutes minimum, mais elle va toujours dire \"on part bientôt\"",
-      "C. Elle a déjà préparé un petit snack pour la route",
-      "D. 5 minutes, et on y va tout de suite."
-    ]
-  },
-  {
-    text: "Son sac à main contient toujours…",
-    options: [
-      "A. Pansements et mouchoirs",
-      "B. Un ticket de caisse de 2019",
-      "C. Des gâteaux",
-      "D. Un agenda"
-    ]
-  },
-  {
-    text: "En vacances, elle est plutôt du genre…",
-    options: [
-      "A. Endroit calme",
-      "B. Chasse au trésor",
-      "C. Dégustation des traditions",
-      "D. Emploi du temps des sorties"
-    ]
-  }
-];
-
+    const questions = [
+      {
+        text: "Que fait ta mère quand tu es malade ?",
+        options: [
+          "A. Elle te fait un câlin",
+          "B. Elle te fait rire",
+          "C. Elle t’amène tes snacks préférés",
+          "D. Elle te donne un traitement toutes les 4 heures"
+        ]
+      },
+      {
+        text: "Le dimanche matin, elle préfère…",
+        options: [
+          "A. Jouer avec vous",
+          "B. Danser dans le salon",
+          "C. Bruncher",
+          "D. Planifier la semaine"
+        ]
+      },
+      {
+        text: "À l’école, tu avais oublié ton goûter. Que faisait-elle le lendemain ?",
+        options: [
+          "A. Mot doux sur le cartable pour éviter de l'oublier",
+          "B. Elle te taquinait sur ton oubli",
+          "C. Elle te préparait un goûter XXL",
+          "D. Elle mettait un rappel dans le planning"
+        ]
+      },
+      {
+        text: "Quand ta maman te dit : \"On part dans 5 minutes\", ça veut dire...",
+        options: [
+          "A. Elle va s'assurer que tu as tout ce qu'il te faut avant de partir",
+          "B. 30 minutes minimum, mais elle va toujours dire \"on part bientôt\"",
+          "C. Elle a déjà préparé un petit snack pour la route",
+          "D. 5 minutes, et on y va tout de suite."
+        ]
+      },
+      {
+        text: "Son sac à main contient toujours…",
+        options: [
+          "A. Pansements et mouchoirs",
+          "B. Un ticket de caisse de 2019",
+          "C. Des gâteaux",
+          "D. Un agenda"
+        ]
+      },
+      {
+        text: "En vacances, elle est plutôt du genre…",
+        options: [
+          "A. Endroit calme",
+          "B. Chasse au trésor",
+          "C. Dégustation des traditions",
+          "D. Emploi du temps des sorties"
+        ]
+      }
+    ];
 
     const results = {
       A: "💖 Maman attentionnée : Toujours là pour t’écouter, te consoler et prendre soin de toi. Une vraie protectrice pleine de douceur.",
@@ -174,13 +170,13 @@
       const majority = Object.keys(count).reduce((a,b) => count[a] > count[b] ? a : b);
       resultContainer.innerHTML = `<h2>Résultat</h2><p>${results[majority]}</p>`;
     }
-    </script>
+  </script>
 
-    <footer style="text-align: center; margin-top: 40px;">
-      <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot" width="200">
-      <p style="font-size: 14px; color: #555;">Avec amour et chocolat 🍫</p>
-    </footer>
+  <footer style="text-align: center; margin-top: 40px;">
+    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot" width="200">
+    <p style="font-size: 14px; color: #555;">Avec amour et chocolat 🍫</p>
+  </footer>
 
-  </body>
+</body>
 </html>
 
