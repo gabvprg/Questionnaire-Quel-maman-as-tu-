@@ -7,19 +7,34 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #fdf6f0;
+      background-color: #fdf6f0;
+      background-image: url('https://i.imgur.com/zJ5R2Sl.png'); /* motif chocolat */
+      background-repeat: repeat;
+      background-size: 60px;
+      background-attachment: fixed;
       color: #333;
       padding: 20px;
+      margin: 0;
+    }
+
+    .container {
       max-width: 700px;
       margin: auto;
+      background-color: rgba(255, 255, 255, 0.9); /* fond blanc semi-transparent */
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
+
     h1, h2 {
       text-align: center;
       color: #a0522d;
     }
+
     .question {
       margin-bottom: 30px;
     }
+
     .answers button {
       display: block;
       margin: 10px 0;
@@ -31,9 +46,11 @@
       width: 100%;
       transition: 0.3s;
     }
+
     .answers button:hover {
       background-color: #ffeacc;
     }
+
     #result {
       display: none;
       background: #fff;
@@ -42,6 +59,7 @@
       margin-top: 30px;
       border: 2px solid #d4a373;
     }
+
     #start-btn {
       display: block;
       margin: 20px auto;
@@ -53,15 +71,37 @@
       border-radius: 12px;
       cursor: pointer;
     }
+
     .hidden { display: none; }
+
+    footer {
+      text-align: center;
+      margin: 40px auto 20px;
+    }
+
+    footer img {
+      width: 200px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
-  <h1>Quel chocolat pour ta maman ? 🍫</h1>
-  <p style="text-align:center;">Réponds à ces quelques questions et découvre quel chocolat représente le mieux ta maman !</p>
-  <button id="start-btn">Commencer le quiz</button>
-  <div id="quiz" class="hidden"></div>
-  <div id="result"></div>
+  <div class="container">
+    <h1>Quel chocolat pour ta maman ? 🍫</h1>
+    <p style="text-align:center;">Réponds à ces quelques questions et découvre quel chocolat représente le mieux ta maman !</p>
+    <button id="start-btn">Commencer le quiz</button>
+    <div id="quiz" class="hidden"></div>
+    <div id="result"></div>
+  </div>
+
+  <footer>
+    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot">
+    <p>Avec amour et chocolat 🍫</p>
+  </footer>
 
   <script>
     const questions = [
@@ -171,11 +211,5 @@
       resultContainer.innerHTML = `<h2>Résultat</h2><p>${results[majority]}</p>`;
     }
   </script>
-
-  <footer style="text-align: center; margin-top: 40px;">
-    <img src="https://www.chocolats-diot.fr/img/les-chocolats-diot-logo-1706959542.jpg" alt="Logo Chocolaterie Diot" width="200">
-    <p style="font-size: 14px; color: #555;">Avec amour et chocolat 🍫</p>
-  </footer>
-
 </body>
 </html>
